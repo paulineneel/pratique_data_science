@@ -73,8 +73,23 @@ def merge_all_csv():
     df_all.to_csv("Companies_historical_data.csv", index=False)
     return df_all
 
-# Exemple d'utilisation :
-# mount_drive()
-# df_ratios, companies = get_ratios()
-# create_historical_data(companies)
-# df_all = merge_all_csv()
+
+if __name__ == "__main__":
+    print("🔁 Démarrage du TP1")
+
+    # Étape 1 : monter Google Drive
+    mount_drive()
+
+    # Étape 2 : récupérer ratios et écrire df_ratios.csv
+    df_ratios, companies = get_ratios()
+    print("✅ Ratios enregistrés dans df_ratios.csv")
+
+    # Étape 3 : télécharger l'historique et sauvegarder les CSV
+    create_historical_data(companies)
+    print("✅ Historique sauvegardé dans Companies_historical_data/")
+
+    # Étape 4 : fusionner tous les fichiers CSV
+    df_all = merge_all_csv()
+    print("✅ Fichier fusionné : Companies_historical_data.csv")
+
+    print("🎉 TP1 terminé avec succès.")
