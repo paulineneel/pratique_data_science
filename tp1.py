@@ -427,7 +427,6 @@ import yfinance as yf
 import glob
 import os
 
-!pip install ta
 
 import ta
 
